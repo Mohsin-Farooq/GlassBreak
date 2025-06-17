@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class TestGlassBreaker : MonoBehaviour
 {
-    public RayfireRigid glassRigid;
+//    public RayfireRigid glassRigid;
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("ball"))
         {
-            glassRigid.Demolish(); 
+       //     glassRigid.Demolish(); 
  
         }
     }
