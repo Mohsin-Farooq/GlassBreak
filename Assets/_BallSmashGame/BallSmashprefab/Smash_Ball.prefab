@@ -13,12 +13,7 @@ GameObject:
   - component: {fileID: 3659888704824829842}
   - component: {fileID: 6216955365287959691}
   - component: {fileID: 1930853073803443687}
-  - component: {fileID: 6882693237954117380}
-  - component: {fileID: -8076170392283237733}
-  - component: {fileID: -1784342267050649959}
-  - component: {fileID: 7799900581784505290}
-  - component: {fileID: -5122887141136585902}
-  - component: {fileID: -7503220984279981803}
+  - component: {fileID: -8929705480096018628}
   m_Layer: 8
   m_Name: Smash_Ball
   m_TagString: Ball
@@ -139,7 +134,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.18
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6882693237954117380
+--- !u!114 &-8929705480096018628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,76 +143,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3380230540177475378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32ce60f3724d92428829bd803326bc2, type: 3}
+  m_Script: {fileID: 11500000, guid: a38078d195789a544bd4190659eaec33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.2
-  verticalSensitivity: 0.002
-  maxYForce: 4
---- !u!114 &-8076170392283237733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3380230540177475378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcef07f62d472b04caa39411fdf1b168, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallTag: Wall
-  inputHandler: {fileID: 7799900581784505290}
-  ballMovement: {fileID: 6882693237954117380}
-  visualEffects: {fileID: -1784342267050649959}
-  ballInputAction: {fileID: -7503220984279981803}
---- !u!114 &-1784342267050649959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3380230540177475378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfd964c8cf25f14ba8b243fe63cc66b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7799900581784505290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3380230540177475378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83666dcdd6c6d2b48af1776c9bd0cf29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-5122887141136585902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3380230540177475378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff2f76c5ced15041abbee89097a0a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customGravity: {x: 0, y: -3, z: 0}
---- !u!114 &-7503220984279981803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3380230540177475378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a2150904564ad4c99fac54c45c7f1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballReleaseThreshold: 2.3
+  _BallRealeasedThereshold: 0
+  _ball: {fileID: 6216955365287959691}
+  _moveSpeed: 10
+  maxYForce: 5
+  verticalSensitivity: 0.005

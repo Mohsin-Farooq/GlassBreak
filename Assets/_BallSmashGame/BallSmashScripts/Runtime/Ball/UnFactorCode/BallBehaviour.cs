@@ -7,14 +7,13 @@ using MoreMountains.NiceVibrations;
 namespace BallThroughGame
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class BallBehaviour : MonoBehaviour,IBallIntereact
+    public class BallBehaviour : MonoBehaviour
     {
         #region Variables
 
         [SerializeField] private float _BallRealeasedThereshold;
         [SerializeField] private Rigidbody _ball;
         [SerializeField] private float _moveSpeed;
-        [SerializeField] private Vector3 _customGravity = new Vector3(0, -4f, 0);
         [SerializeField] private float maxYForce = 5f;
         [SerializeField] private float verticalSensitivity = 0.005f;
         private int ballLayer = 8, BlockLayer = 6;
@@ -27,11 +26,8 @@ namespace BallThroughGame
         Vector3 initialScale;
         #endregion
 
-
         private void Start()
-        {
-
-            Physics.gravity = _customGravity;
+        {    
             initialScale = transform.localScale;
             transform.localScale = initialScale;
 
@@ -45,43 +41,44 @@ namespace BallThroughGame
                 Touch touch = Input.GetTouch(0); // Always consider the first touch only
 
                 if (touch.phase == TouchPhase.Began && !isTouchActive)
-                {
+                {   
                     isTouchActive = true; // Mark that a touch is in progress
-                    _StartTouch = touch.position;
-                    _StartTime = Time.time;
-                }
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
 
-                if (touch.phase == TouchPhase.Ended && isTouchActive)
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        Vector3 targetPosition = hit.point;
+                        ProcessTouch(targetPosition);
+                    }
+                }  
+            }
+
+            else if (Input.GetMouseButtonDown(0)) // Left mouse click or tap
+            {
+                Debug.Log("fff");
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    _EndTouch = touch.position;
-                    _EndTime = Time.time;
-
-                    ProcessTouch();
-                    isTouchActive = false; // Reset the touch flag
+                    Vector3 targetPosition = hit.point;
+                    ProcessTouch(targetPosition);
                 }
             }
-           
         }
-
-        private void ProcessTouch()
+        private void ProcessTouch(Vector3 targetPosition)
         {
-            Vector2 Delta = _EndTouch - _StartTouch;
+            // Calculate the direction and velocity for the ball
+            Vector3 direction = (targetPosition - transform.position).normalized;
 
-            float swipeDuration = Mathf.Max(_EndTime - _StartTime, 0.01f);
-            Vector2 swipeVelocity = Delta / swipeDuration;
+            float distance = Vector3.Distance(transform.position, targetPosition);
 
-            float rawYForce = swipeVelocity.y * verticalSensitivity;
-            float clampedY = Mathf.Clamp(rawYForce, -maxYForce, maxYForce);
+            // Ensure strong movement in Z-direction
+            direction.y = Mathf.Clamp(direction.y, -maxYForce, maxYForce);
+            _PendingVelocity = direction * _moveSpeed * Mathf.Clamp(distance, 1f, 30f);
 
-            float x = swipeVelocity.x * verticalSensitivity;
-            float z = swipeVelocity.y * _moveSpeed * 0.01f;
-
-            Vector3 direction = new Vector3(x, clampedY, z).normalized;
-
-            float swipeForce = swipeVelocity.magnitude * _moveSpeed * 0.01f;
-            _PendingVelocity = direction * swipeForce;
-
-            if (swipeForce > _BallRealeasedThereshold)
+            if (_PendingVelocity.magnitude > _BallRealeasedThereshold)
             {
                 _isTouching = true;
             }
@@ -97,7 +94,7 @@ namespace BallThroughGame
                 this.enabled = false;
                 MMVibrationManager.Haptic(HapticTypes.LightImpact);
                 AudioManager._instance.PlaySound("throw");
-                Invoke(nameof(SpawnDelay), 1f);
+                Invoke(nameof(SpawnDelay), 0.1f);
             }
         }
 
@@ -109,9 +106,7 @@ namespace BallThroughGame
                 //  AudioManager._instance.PlaySound("WoodHit_0");
                 Invoke(nameof(BallReturnedToPool), 1f);
             }
-
         }
-
         private void BallReturnedToPool()
         {
             if (!HasHit)
@@ -120,7 +115,6 @@ namespace BallThroughGame
                 HasHit = true;
             }
         }
-
 
         private IEnumerator ScaleAndReturn()
         {
@@ -139,12 +133,12 @@ namespace BallThroughGame
 
             transform.localScale = targetScale;
 
-
             PoolManager.instance.ReturnBall(this.gameObject);
             this.enabled = true;
             _ball.isKinematic = true;
 
         }
+
 
         private void OnEnable()
         {
@@ -154,16 +148,10 @@ namespace BallThroughGame
 
         private void SpawnDelay()
         {
-
+            
             BallSpawning.instance.Spawn();
 
         }
 
-
-        public void BallInteract( )
-        {
-           
-            
-        }
     }
 }

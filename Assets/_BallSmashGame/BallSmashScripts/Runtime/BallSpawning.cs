@@ -17,7 +17,8 @@ public class BallSpawning : MonoBehaviour
     private void BallSpawm()
     {
         GameObject ball = PoolManager.instance.GetBall(this.transform.position, 1);
-        BallVisualEffects visual = ball.GetComponent<BallVisualEffects>();
-        StartCoroutine(visual.ScaleUp(0.2f, Vector3.one * 1.5f));
+        ball.transform.localScale = Vector3.one;
+      //  BallVisualEffects visual = ball.GetComponent<BallVisualEffects>();
+       //  StartCoroutine(visual.ScaleUp(0.2f, Vector3.one * 1.5f));
     }
 }
