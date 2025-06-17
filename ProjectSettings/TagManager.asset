@@ -4,18 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ball
-  - Glass
+  - Block
+  - Wall
+  - Ball
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcessing
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Block
+  - Cart
+  - Ball
   - 
   - 
   - 
