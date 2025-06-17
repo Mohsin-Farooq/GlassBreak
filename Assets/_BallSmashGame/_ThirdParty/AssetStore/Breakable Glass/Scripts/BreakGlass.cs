@@ -33,13 +33,15 @@ public class BreakGlass : MonoBehaviour {
 		
 		foreach(Transform t in BrokenGlassInstance.transform){
 			t.GetComponent<Renderer>().material = ShardMaterial;
-			t.GetComponent<Rigidbody>().mass=ShardMass;
+			//t.GetComponent<Rigidbody>().mass=ShardMass;
+			Physics.gravity = new Vector3(0, -1f, 0);
+
 		}
-		
-		if(BreakSound) Destroy(Instantiate(SoundEmitter, transform.position, transform.rotation) as GameObject, SoundEmitterLifetime);
+
+		if (BreakSound) Destroy(Instantiate(SoundEmitter, transform.position, transform.rotation) as GameObject, SoundEmitterLifetime);
 		
 		if(ShardsLifetime>0) Destroy(BrokenGlassInstance,ShardsLifetime);
-		Destroy(gameObject);
+		Destroy(gameObject); 
 	}
 	
 	void OnMouseDown () {

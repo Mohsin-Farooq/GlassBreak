@@ -38,12 +38,12 @@ namespace BallThroughGame
             // Check for touches on mobile or mouse input on desktop
             if (Input.touchCount > 0)
             {
-                Touch touch = Input.GetTouch(0); // Always consider the first touch only
+                Touch touch = Input.GetTouch(0); // Consider the first touch
 
                 if (touch.phase == TouchPhase.Began && !isTouchActive)
-                {   
+                {
                     isTouchActive = true; // Mark that a touch is in progress
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
                     RaycastHit hit;
 
                     if (Physics.Raycast(ray, out hit))
@@ -51,9 +51,14 @@ namespace BallThroughGame
                         Vector3 targetPosition = hit.point;
                         ProcessTouch(targetPosition);
                     }
-                }  
-            }
+                }
 
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    isTouchActive = false; // Reset the touch flag
+                }
+            }
+        
             else if (Input.GetMouseButtonDown(0)) // Left mouse click or tap
             {
                
@@ -67,6 +72,8 @@ namespace BallThroughGame
                 }
             }
         }
+
+
         private void ProcessTouch(Vector3 targetPosition)
         {
             // Calculate the direction and velocity for the ball
