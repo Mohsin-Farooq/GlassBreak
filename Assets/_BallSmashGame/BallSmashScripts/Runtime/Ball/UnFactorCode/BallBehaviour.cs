@@ -56,7 +56,7 @@ namespace BallThroughGame
 
             else if (Input.GetMouseButtonDown(0)) // Left mouse click or tap
             {
-                Debug.Log("fff");
+               
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
