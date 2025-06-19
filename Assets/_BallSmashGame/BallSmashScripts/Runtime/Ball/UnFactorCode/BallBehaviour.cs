@@ -125,7 +125,7 @@ namespace BallThroughGame
 
         private IEnumerator ScaleAndReturn()
         {
-            float duration = 0.3f;
+            float duration = 0.1f;
             float elapsed = 0f;
 
             initialScale = transform.localScale;

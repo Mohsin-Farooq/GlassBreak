@@ -22,8 +22,7 @@ public class BottleManager : MonoBehaviour
             {
                 bottles.Add(bottle);
                 totalBottles++;
-                bottle.gameObject.SetActive(true); 
-               
+                StartCoroutine(EnbalingBottles(bottle));
             }
         }
     }
@@ -51,4 +50,10 @@ public class BottleManager : MonoBehaviour
         UI_Manager.instance.DeactibateRestartImage();
     }
 
+
+    IEnumerator  EnbalingBottles(BreakGlass bottle)
+    {
+        yield return new WaitForSeconds(0.5f);
+        bottle.gameObject.SetActive(true);
+    }
 }
