@@ -22,22 +22,14 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int index)
     {
-      
         index %= Levels.Count;
 
- 
         foreach (GameObject level in Levels)
         {
             level.SetActive(false);
         }
-
- 
         Levels[index].SetActive(true);
-
-   
         bottleManager.RegisterBottlesInLevel(Levels[index]);
-
-     ;
     }
 
     public void NextLevel()

@@ -8,6 +8,12 @@ public class UI_Manager : MonoBehaviour
     {
         instance = this;
     }
+
+    public void DeactibateRestartImage()
+    {
+        RestartImage.SetActive(false);
+    }
+
     public void GetActiveRestartImage()
     {
         RestartImage.SetActive(true);

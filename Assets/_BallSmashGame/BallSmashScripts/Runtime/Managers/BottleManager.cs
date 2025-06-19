@@ -33,9 +33,22 @@ public class BottleManager : MonoBehaviour
 
         if (bottles.Count == 0)
         {
-            levelManager.NextLevel();
+            UI_Manager.instance.GetActiveRestartImage();
+
+            Invoke(nameof(LoadNextLevel), 0.2f);
+           
         }
     }
 
+    private void LoadNextLevel()
+    {
+        levelManager.NextLevel();
+        Invoke(nameof(DiabsleImage), 0.5f);
+    }
+
+    private void DiabsleImage()
+    {
+        UI_Manager.instance.DeactibateRestartImage();
+    }
 
 }

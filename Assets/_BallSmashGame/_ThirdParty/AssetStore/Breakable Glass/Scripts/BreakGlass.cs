@@ -7,7 +7,7 @@ public class BreakGlass : MonoBehaviour {
 	public bool BreakSound=true;
 	public GameObject SoundEmitter; //An object that will emit sound
 	public float SoundEmitterLifetime=2.0f;
-	public float ShardsLifetime=3.0f; //Lifetime of shards in seconds (0 if you don't want shards to disappear)
+	public float ShardsLifetime=2.0f; //Lifetime of shards in seconds (0 if you don't want shards to disappear)
 	public float ShardMass=0.5f; //Mass of each shard
 	public Material ShardMaterial;
 	
