@@ -45,7 +45,7 @@ public class BreakGlass : MonoBehaviour {
 		
 		foreach(Transform t in BrokenGlassInstance.transform){
 			t.GetComponent<Renderer>().material = ShardMaterial;
-			//t.GetComponent<Rigidbody>().mass=ShardMass;
+			t.GetComponent<Rigidbody>().mass=ShardMass;
 			
 
 		}

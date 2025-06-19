@@ -103,12 +103,12 @@ MonoBehaviour:
   SoundEmitter: {fileID: 100000, guid: f96c4aea1973514408d65f75f5d2dc56, type: 3}
   SoundEmitterLifetime: 2
   ShardsLifetime: 3
-  ShardMass: 0.5
+  ShardMass: 0.01
   ShardMaterial: {fileID: 2100000, guid: 06b63a1937bc3c14d9dd5384232f73d5, type: 2}
   BreakByVelocity: 1
   BreakVelocity: 2
   BreakByImpulse: 1
-  BreakImpulse: 2
+  BreakImpulse: 10
   BreakByClick: 0
   SlowdownCoefficient: 0.6
   bottleManager: {fileID: 0}
@@ -132,4 +132,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.16801432, y: 0.5667883, z: 0.17000912}
-  m_Center: {x: 0.000000007450581, y: 0.28339416, z: 0.00000008195639}
+  m_Center: {x: 0, y: 0.28339416, z: 0.00000008195639}
