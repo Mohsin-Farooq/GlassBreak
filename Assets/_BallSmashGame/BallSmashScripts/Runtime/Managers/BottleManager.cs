@@ -20,9 +20,11 @@ public class BottleManager : MonoBehaviour
         bottles.Remove(bottle);
 
         if (bottles.Count == 0)
-        { 
+        {
+           
             StartCoroutine(WaitAndLoadNextLevel(0.8f));
             Invoke(nameof(LevelRestartCall), 0.5f);
+
         }
     }
 
@@ -36,16 +38,12 @@ public class BottleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime); // Wait for the specified time
         levelManager.NextLevel();
-
-       
-
     }
-
-
 
     private void LevelRestartCall()
     {
         buttonMnager.Restart();
+      
     }
 
 }

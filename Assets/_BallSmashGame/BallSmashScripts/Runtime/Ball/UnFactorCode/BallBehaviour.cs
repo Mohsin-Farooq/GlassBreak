@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.NiceVibrations;
 
-namespace BallThroughGame
-{
+
     [RequireComponent(typeof(Rigidbody))]
     public class BallBehaviour : MonoBehaviour
     {
@@ -60,8 +59,7 @@ namespace BallThroughGame
             }
         
             else if (Input.GetMouseButtonDown(0)) // Left mouse click or tap
-            {
-               
+            {        
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
@@ -72,7 +70,6 @@ namespace BallThroughGame
                 }
             }
         }
-
 
         private void ProcessTouch(Vector3 targetPosition)
         {
@@ -161,4 +158,3 @@ namespace BallThroughGame
         }
 
     }
-}

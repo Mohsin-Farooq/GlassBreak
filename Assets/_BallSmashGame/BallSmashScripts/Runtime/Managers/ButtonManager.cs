@@ -11,5 +11,6 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
         UI_Manager.instance.DestroyCanvas();
+        
     }
 }
