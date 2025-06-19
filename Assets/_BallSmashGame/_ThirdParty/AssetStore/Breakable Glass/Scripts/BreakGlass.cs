@@ -20,13 +20,23 @@ public class BreakGlass : MonoBehaviour {
 	public bool BreakByClick=false;
 	
 	public float SlowdownCoefficient=0.6f; // Percent of speed that hitting object has after the hit 
-	
-	
-	
+
+
+	[SerializeField] private BottleManager bottleManager;
+
+
+	private void Smashed()
+    {     //notify manager
+		
+		bottleManager.BottleSmashed(this);		
+	}
 	/*
 	/ If you want to break the glass call this function ( myGlass.SendMessage("BreakIt") )
 	*/
 	public void BreakIt(){
+		
+		Smashed();
+
 		BrokenGlassInstance = Instantiate(BrokenGlassGO[Random.Range(0,BrokenGlassGO.Count)], transform.position, transform.rotation) as GameObject;
 		
 		BrokenGlassInstance.transform.localScale = transform.lossyScale;
@@ -41,7 +51,10 @@ public class BreakGlass : MonoBehaviour {
 		if (BreakSound) Destroy(Instantiate(SoundEmitter, transform.position, transform.rotation) as GameObject, SoundEmitterLifetime);
 		
 		if(ShardsLifetime>0) Destroy(BrokenGlassInstance,ShardsLifetime);
-		Destroy(gameObject); 
+		
+	//	Destroy(gameObject);
+
+		gameObject.SetActive(false); // deactivaing bottle
 	}
 	
 	void OnMouseDown () {

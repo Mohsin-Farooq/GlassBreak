@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6726035459249182953}
   m_Layer: 0
   m_Name: GlassBottle
-  m_TagString: Untagged
+  m_TagString: Bottle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   BreakImpulse: 2
   BreakByClick: 0
   SlowdownCoefficient: 0.6
+  bottleManager: {fileID: 0}
 --- !u!65 &6726035459249182953
 BoxCollider:
   m_ObjectHideFlags: 0

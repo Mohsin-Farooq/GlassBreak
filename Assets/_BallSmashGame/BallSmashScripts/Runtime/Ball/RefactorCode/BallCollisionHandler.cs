@@ -18,10 +18,7 @@ public class BallCollisionHandler : MonoBehaviour
             HandleWallCollision();
         }
 
-        if (collision.gameObject.TryGetComponent(out IBlockInterat Iblock))
-        {
-            Iblock.BlockInteract();
-        }
+       
     }
     public void ResetCollisionState()
     {

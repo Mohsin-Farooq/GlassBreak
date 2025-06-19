@@ -4,7 +4,10 @@ using System.Collections;
 public class GlassBreaker : MonoBehaviour {
 	Vector3 vel;
 	BreakGlass g;
-	void FixedUpdate () {
+
+
+
+    void FixedUpdate () {
 		vel = GetComponent<Rigidbody>().velocity;
 	}
 	
