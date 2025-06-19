@@ -5,55 +5,47 @@ using UnityEngine;
 public class BottleManager : MonoBehaviour
 {
     [SerializeField] private LevelManager levelManager;
-
+    [SerializeField] private ButtonManager buttonMnager;
     private List<BreakGlass> bottles = new List<BreakGlass>();
     private int totalBottles;
-    public void RegisterBottlesInLevel(GameObject activeLevel)
-    {
-     
-        bottles.Clear();
-        totalBottles = 0;
-       
-        BreakGlass[] levelBottles = activeLevel.GetComponentsInChildren<BreakGlass>(true);
 
-        foreach (BreakGlass bottle in levelBottles)
-        {
-            if (bottle != null)
-            {
-                bottles.Add(bottle);
-                totalBottles++;
-                StartCoroutine(EnbalingBottles(bottle));
-            }
-        }
+    public void RegisterBottle(BreakGlass bottle)
+    {
+        bottles.Add(bottle);
+        totalBottles++;
     }
+
     public void BottleSmashed(BreakGlass bottle)
     {
         bottles.Remove(bottle);
 
         if (bottles.Count == 0)
-        {
-            UI_Manager.instance.GetActiveRestartImage();
-
-            Invoke(nameof(LoadNextLevel), 0.2f);
-           
+        { 
+            StartCoroutine(WaitAndLoadNextLevel(0.8f));
+            Invoke(nameof(LevelRestartCall), 0.5f);
         }
     }
 
-    private void LoadNextLevel()
+    public void ResetManager()
     {
+        bottles.Clear();
+        totalBottles = 0;
+    }
+
+    private IEnumerator WaitAndLoadNextLevel(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime); // Wait for the specified time
         levelManager.NextLevel();
-        Invoke(nameof(DiabsleImage), 0.5f);
+
+       
+
     }
 
-    private void DiabsleImage()
+
+
+    private void LevelRestartCall()
     {
-        UI_Manager.instance.DeactibateRestartImage();
+        buttonMnager.Restart();
     }
 
-
-    IEnumerator  EnbalingBottles(BreakGlass bottle)
-    {
-        yield return new WaitForSeconds(0.5f);
-        bottle.gameObject.SetActive(true);
-    }
 }

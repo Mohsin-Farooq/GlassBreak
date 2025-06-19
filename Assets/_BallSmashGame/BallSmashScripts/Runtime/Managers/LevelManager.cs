@@ -13,28 +13,45 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
 
-    private void Start()
-    {
-        LoadLevel(index);
     }
-
     public void LoadLevel(int index)
     {
-        index %= Levels.Count;
+        if (index >= Levels.Count)
+        {
+            
+            index = 0;
+        }
+        PlayerPrefs.SetInt("Level", index);
 
         foreach (GameObject level in Levels)
         {
             level.SetActive(false);
         }
-        Levels[index].SetActive(true);
-        bottleManager.RegisterBottlesInLevel(Levels[index]);
+
+        Levels[PlayerPrefs.GetInt("Level")].SetActive(true);
+        bottleManager.ResetManager();
     }
 
     public void NextLevel()
     {
-        index = (index + 1) % Levels.Count; 
+        index++;
+        LoadLevel(index);
+    }
+
+    private void Start()
+    {
+       
+        if (PlayerPrefs.HasKey("Level"))
+        {
+            index = PlayerPrefs.GetInt("Level");
+        }
+        else
+        {
+            index = 0;
+            PlayerPrefs.SetInt("Level", index);
+        }
+
         LoadLevel(index);
     }
 }

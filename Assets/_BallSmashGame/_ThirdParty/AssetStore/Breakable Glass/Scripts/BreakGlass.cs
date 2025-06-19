@@ -24,7 +24,11 @@ public class BreakGlass : MonoBehaviour {
 
 	[SerializeField] private BottleManager bottleManager;
 
-
+	void Start()
+	{
+		
+		bottleManager.RegisterBottle(this);
+	}
 	private void Smashed()
     {     //notify manager
 		
