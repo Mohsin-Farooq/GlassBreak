@@ -23,9 +23,9 @@ public class AudioService : MonoBehaviour, IAudioService
 
         if (_AudioClipsDic.TryGetValue(soundName, out var clips));
         {
-          //  SoundSource.PlayOneShot(clips);     
-                SoundSource.clip = clips;
-                SoundSource.Play();
+            SoundSource.PlayOneShot(clips);     
+              //  SoundSource.clip = clips;
+              //  SoundSource.Play();
         }
     }
     public void StopSounds(string SoundName)

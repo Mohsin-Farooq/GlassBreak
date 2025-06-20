@@ -11,12 +11,12 @@ public class AudioManager : MonoBehaviour
     }
     public void PlaySound(string SoundName)
     {
-        if (SoundName == "WoodHit_0")
+        if (SoundName == "VetroRotto_7")
         {
-            if (Random.Range(0, 15) < 2)
+            if (Random.Range(0, 15) < 8)
             {
                 _audioServiceProvider.PlaySounds(SoundName);
-                _audioServiceProvider.SetVolumn(0.5f);
+                _audioServiceProvider.SetVolumn(0.8f);
             }
         }
         else

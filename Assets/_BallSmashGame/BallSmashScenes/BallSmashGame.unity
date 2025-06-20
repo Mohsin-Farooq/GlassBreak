@@ -1252,7 +1252,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.88528013, b: 0.7216981, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1528,8 +1528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SoundSource: {fileID: 773092323}
   audioClips:
-  - {fileID: 8300000, guid: 5f2923856acfe0b469ec5074f14c06fb, type: 3}
-  - {fileID: 8300000, guid: e0fcdce2285ca3d4eb52e8e8625fcfe0, type: 3}
+  - {fileID: 8300000, guid: 2341d4aff071b7c419d91ba05cde6513, type: 3}
 --- !u!4 &773092325
 Transform:
   m_ObjectHideFlags: 0
