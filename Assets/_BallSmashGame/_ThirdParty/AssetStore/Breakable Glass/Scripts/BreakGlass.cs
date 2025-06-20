@@ -52,7 +52,7 @@ public class BreakGlass : MonoBehaviour {
 
 		if (BreakSound) Destroy(Instantiate(SoundEmitter, transform.position, transform.rotation) as GameObject, SoundEmitterLifetime);
 		
-		if(ShardsLifetime>0) Destroy(BrokenGlassInstance,ShardsLifetime);
+		//if(ShardsLifetime>0) Destroy(BrokenGlassInstance,ShardsLifetime);
 	
 	//	Destroy(gameObject);
 		gameObject.SetActive(false); 
