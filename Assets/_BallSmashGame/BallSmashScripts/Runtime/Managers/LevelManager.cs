@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     { 
-        Physics.gravity = new Vector3(0, -0.5f, 0);
+        Physics.gravity = new Vector3(0, -1.8f, 0);
     }
     public void LoadLevel(int index)
     {

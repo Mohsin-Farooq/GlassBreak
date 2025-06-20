@@ -129,7 +129,7 @@ MonoBehaviour:
   BreakByVelocity: 1
   BreakVelocity: 2
   BreakByImpulse: 1
-  BreakImpulse: 13.45
+  BreakImpulse: 2
   BreakByClick: 0
   SlowdownCoefficient: 0.6
   bottleManager: {fileID: 0}

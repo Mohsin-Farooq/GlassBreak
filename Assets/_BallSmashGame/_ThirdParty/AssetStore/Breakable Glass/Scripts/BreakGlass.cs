@@ -35,29 +35,75 @@ public class BreakGlass : MonoBehaviour {
 	/*
 	/ If you want to break the glass call this function ( myGlass.SendMessage("BreakIt") )
 	*/
-	public void BreakIt(){
-		
+	//public void BreakIt(){
+
+	//	Smashed();
+
+	//	BrokenGlassInstance = Instantiate(BrokenGlassGO[Random.Range(0,BrokenGlassGO.Count)],this.transform.position, transform.rotation) as GameObject;
+
+	//	BrokenGlassInstance.transform.localScale = transform.lossyScale;
+
+	//	foreach(Transform t in BrokenGlassInstance.transform){
+	//		t.GetComponent<Renderer>().material = ShardMaterial;
+	//		t.GetComponent<Rigidbody>().mass=ShardMass;
+
+
+	//	}
+
+	//	if (BreakSound) Destroy(Instantiate(SoundEmitter, transform.position, transform.rotation) as GameObject, SoundEmitterLifetime);
+
+	//	//if(ShardsLifetime>0) Destroy(BrokenGlassInstance,ShardsLifetime);
+
+	////	Destroy(gameObject);
+	//	gameObject.SetActive(false); 
+	//}
+
+
+
+	public void BreakIt()
+	{
+		// Trigger smashed logic (animations, effects, etc.)
 		Smashed();
 
-		BrokenGlassInstance = Instantiate(BrokenGlassGO[Random.Range(0,BrokenGlassGO.Count)],this.transform.position, transform.rotation) as GameObject;
-		
+		// Instantiate the broken glass prefab
+		BrokenGlassInstance = Instantiate(BrokenGlassGO[Random.Range(0, BrokenGlassGO.Count)], this.transform.position, transform.rotation) as GameObject;
 		BrokenGlassInstance.transform.localScale = transform.lossyScale;
-		
-		foreach(Transform t in BrokenGlassInstance.transform){
-			t.GetComponent<Renderer>().material = ShardMaterial;
-			t.GetComponent<Rigidbody>().mass=ShardMass;
-			
 
+		// Explosion parameters
+		float explosionForce = 0f; // Adjust this to control the spread of the shards
+		float explosionRadius = 0f;  // Adjust this to control the radius of the explosion
+		float upwardsModifier = 0f; // Adds vertical lift to the shards
+
+		// Apply explosion force to each shard
+		foreach (Transform shard in BrokenGlassInstance.transform)
+		{
+			Rigidbody shardRb = shard.GetComponent<Rigidbody>();
+
+			if (shardRb != null)
+			{
+				// Apply explosion force from the center of the broken glass
+				shardRb.AddExplosionForce(
+					explosionForce,            // Force magnitude
+					transform.position,        // Explosion origin
+					explosionRadius,           // Explosion radius
+					upwardsModifier           // Upward force modifier
+					//ForceMode.Impulse          // Type of force applied
+				);
+			}
 		}
 
-		if (BreakSound) Destroy(Instantiate(SoundEmitter, transform.position, transform.rotation) as GameObject, SoundEmitterLifetime);
 		
-		//if(ShardsLifetime>0) Destroy(BrokenGlassInstance,ShardsLifetime);
-	
-	//	Destroy(gameObject);
-		gameObject.SetActive(false); 
+		if (BreakSound)
+			Destroy(Instantiate(SoundEmitter, transform.position, transform.rotation) as GameObject, SoundEmitterLifetime);
+
+		
+		//if (ShardsLifetime > 0)
+		//	Destroy(BrokenGlassInstance, ShardsLifetime);
+
+		// Deactivate the original object
+		gameObject.SetActive(false);
 	}
-	
+
 	void OnMouseDown () {
 		if(BreakByClick) BreakIt();	
 	}
