@@ -54,7 +54,7 @@ public class BallBehaviour : MonoBehaviour
 
                 if (IsTouchOverIgnoredUI(touch))
                 {
-                    Debug.Log("Touch on ignored UI element detected. Ignoring ball release.");
+                    
                     return;
                 }
                 else
@@ -91,8 +91,8 @@ public class BallBehaviour : MonoBehaviour
         float distance = Vector3.Distance(transform.position, targetPosition);
 
         direction.y = Mathf.Clamp(direction.y, -maxYForce, maxYForce);
-        _PendingVelocity = direction * _moveSpeed * Mathf.Clamp(distance, 1f, 30f);
-
+        _PendingVelocity = direction * _moveSpeed;// * Mathf.Clamp(distance, 1f, 30f);
+        //_PendingVelocity.Normalize();
         if (_PendingVelocity.magnitude > _BallRealeasedThereshold)
         {
             _isTouching = true;

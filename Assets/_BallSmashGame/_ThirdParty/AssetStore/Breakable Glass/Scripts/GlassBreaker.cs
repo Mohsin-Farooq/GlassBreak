@@ -5,11 +5,15 @@ using MoreMountains.NiceVibrations;
 public class GlassBreaker : MonoBehaviour {
 	Vector3 vel;
 	BreakGlass g;
+    private Rigidbody rb;
 
-
-
+    private void Start()
+    {
+		rb = GetComponent<Rigidbody>();
+    } 
     void FixedUpdate () {
-		vel = GetComponent<Rigidbody>().velocity;
+
+		vel = rb.velocity;
 	}
 	
 	void OnCollisionEnter (Collision col) {

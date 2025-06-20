@@ -12,9 +12,7 @@ public class UI_Manager : MonoBehaviour
             Destroy(gameObject); 
             return;
         }
-
         instance = this;
     }
 
-   
 }

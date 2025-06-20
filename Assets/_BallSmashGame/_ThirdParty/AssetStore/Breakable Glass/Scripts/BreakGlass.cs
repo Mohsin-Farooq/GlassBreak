@@ -39,7 +39,7 @@ public class BreakGlass : MonoBehaviour {
 		
 		Smashed();
 
-		BrokenGlassInstance = Instantiate(BrokenGlassGO[Random.Range(0,BrokenGlassGO.Count)], transform.position, transform.rotation) as GameObject;
+		BrokenGlassInstance = Instantiate(BrokenGlassGO[Random.Range(0,BrokenGlassGO.Count)],this.transform.position, transform.rotation) as GameObject;
 		
 		BrokenGlassInstance.transform.localScale = transform.lossyScale;
 		

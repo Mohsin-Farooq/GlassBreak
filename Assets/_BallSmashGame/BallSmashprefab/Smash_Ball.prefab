@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _BallRealeasedThereshold: 0
   _ball: {fileID: 6216955365287959691}
-  _moveSpeed: 3
+  _moveSpeed: 10
   maxYForce: 10
   verticalSensitivity: 0.005
 --- !u!114 &4580386130010097892
