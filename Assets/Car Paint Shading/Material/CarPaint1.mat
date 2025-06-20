@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: CarPaint1
+  m_Shader: {fileID: 4800000, guid: 1d1bd6f884db9ba4aa64a8983df3a99c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpTex
+        second:
+          m_Texture: {fileID: 2800000, guid: d6ef646c05d4f6c469f55ead3dad3b72, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SparkleTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 44c7ca76d7ba64441acce6aca4b3a5fe, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _EnvTex
+        second:
+          m_Texture: {fileID: 8900000, guid: 3d1e97e4ce402fe448f13476d1c86a87, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MicroFlakeTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 44c7ca76d7ba64441acce6aca4b3a5fe, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _EnvBrightness
+        second: 8
+      data:
+        first:
+          name: _SparkleScale
+        second: 20
+      data:
+        first:
+          name: _SparklePert
+        second: 1
+      data:
+        first:
+          name: _GlossLevel
+        second: 0
+      data:
+        first:
+          name: _MicroflakePerturbation
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _PaintColor0
+        second: {r: 0, g: .250980407, b: 0, a: 1}
+      data:
+        first:
+          name: _PaintColorMid
+        second: {r: 0, g: .250980407, b: 0, a: 1}
+      data:
+        first:
+          name: _PaintColor2
+        second: {r: 0, g: .250980407, b: 0, a: 1}
+      data:
+        first:
+          name: _FlakeColor
+        second: {r: 0, g: .250980377, b: .250980377, a: 1}
+      data:
+        first:
+          name: _FlakeLayerColor
+        second: {r: .5, g: .5, b: 0, a: 1}
+      data:
+        first:
+          name: _SparkleColor
+        second: {r: .5, g: .5, b: 0, a: 1}
+      data:
+        first:
+          name: _FlakeColor1
+        second: {r: .5, g: .5, b: 0, a: 1}

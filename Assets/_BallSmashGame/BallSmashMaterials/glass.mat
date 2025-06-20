@@ -8,18 +8,17 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: glass
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: ae65b4f6898040f4994f833822ad4713, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _ALPHABLEND_ON
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -42,6 +41,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlakesBumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -71,21 +74,34 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
+    - _FlakesBumpMapScale: 1
+    - _FlakesBumpStrength: 0.001
+    - _FlakesColorCutoff: 0.5
+    - _FlakesColorStrength: 1
+    - _FresnelPower: 0.36
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.55
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.457
     - _Mode: 2
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ReflectionGlossiness: 0.667
     - _Shininess: 1
     - _SmoothnessTextureChannel: 0
+    - _SparklePert: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 5
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.44186068, g: 1, b: 0, a: 0.36862746}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.2477231, g: 0.894, b: 0.10102203, a: 0.4745098}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _FlakeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FresnelColor: {r: 0.10399608, g: 0.38679248, b: 0.10399608, a: 1}
+    - _PaintColor0: {r: 1, g: 1, b: 1, a: 1}
+    - _PaintColor1: {r: 1, g: 1, b: 1, a: 1}
+    - _PaintColor2: {r: 1, g: 1, b: 1, a: 1}
+    - _ReflectionSpecular: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
     - _SpecColor: {r: 0.37254906, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
