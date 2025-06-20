@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakingGlassSound : MonoBehaviour
+
+[CreateAssetMenu(fileName ="Scriptable", menuName =" Leveldata")]
+public class BreakingGlassSoundSO :ScriptableObject
 {
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Wall") )
-    //    {
+    public ItemsData[] Bottles, Glasses, Shelfs;
 
-    //        AudioManager._instance.PlaySound("VetroRotto_7");
-          
-    //    }
-    //}
+
+}
+
+
+[System.Serializable]
+
+public class ItemsData
+{
+
+    public GameObject ballPrefab;
+    public Vector3 ballPos;
 
 
 }
