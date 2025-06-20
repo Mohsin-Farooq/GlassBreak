@@ -69,10 +69,10 @@ public class BreakGlass : MonoBehaviour {
 		BrokenGlassInstance = Instantiate(BrokenGlassGO[Random.Range(0, BrokenGlassGO.Count)], this.transform.position, transform.rotation) as GameObject;
 		BrokenGlassInstance.transform.localScale = transform.lossyScale;
 
-		// Explosion parameters
-		float explosionForce = 0f; // Adjust this to control the spread of the shards
-		float explosionRadius = 0f;  // Adjust this to control the radius of the explosion
-		float upwardsModifier = 0f; // Adds vertical lift to the shards
+	
+		float explosionForce = 0f; 
+		float explosionRadius = 0f;  
+		float upwardsModifier = 0f; 
 
 		// Apply explosion force to each shard
 		foreach (Transform shard in BrokenGlassInstance.transform)
@@ -81,13 +81,13 @@ public class BreakGlass : MonoBehaviour {
 
 			if (shardRb != null)
 			{
-				// Apply explosion force from the center of the broken glass
+				
 				shardRb.AddExplosionForce(
-					explosionForce,            // Force magnitude
-					transform.position,        // Explosion origin
-					explosionRadius,           // Explosion radius
-					upwardsModifier           // Upward force modifier
-					//ForceMode.Impulse          // Type of force applied
+					explosionForce,            
+					transform.position,        
+					explosionRadius,         
+					upwardsModifier           
+					         
 				);
 			}
 		}
