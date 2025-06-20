@@ -1,31 +1,20 @@
 using System.Collections;
 using UnityEngine;
+
 public class UI_Manager : MonoBehaviour
 {
     public static UI_Manager instance;
-    [SerializeField] private GameObject RestartImage;
+    public GameObject RestartButton;
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject); 
+            return;
+        }
+
         instance = this;
     }
 
-    public void DeactibateRestartImage()
-    {
-        RestartImage.SetActive(false);
-    }
-
-    public void GetActiveRestartImage()
-    {
-        RestartImage.SetActive(true);
-        DontDestroyOnLoad(this);
-    }
-    public void DestroyCanvas()
-    { 
-        StartCoroutine(DestroyCanvasAfterDelay(0.5f));
-    }
-    private IEnumerator DestroyCanvasAfterDelay(float delay)
-    { 
-        yield return new WaitForSeconds(delay);
-        Destroy(this.gameObject);
-    }
+   
 }

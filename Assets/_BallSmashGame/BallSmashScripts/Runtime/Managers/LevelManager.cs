@@ -5,14 +5,10 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> Levels;
     [SerializeField] private BottleManager bottleManager;
-
     private int index = 0;
 
-    public static LevelManager instance;
-
     private void Awake()
-    {
-        instance = this;
+    { 
         Physics.gravity = new Vector3(0, -0.5f, 0);
     }
     public void LoadLevel(int index)
@@ -39,8 +35,7 @@ public class LevelManager : MonoBehaviour
     }
 
     private void Start()
-    {
-       
+    {    
         if (PlayerPrefs.HasKey("Level"))
         {
             index = PlayerPrefs.GetInt("Level");
@@ -50,7 +45,6 @@ public class LevelManager : MonoBehaviour
             index = 0;
             PlayerPrefs.SetInt("Level", index);
         }
-
         LoadLevel(index);
     }
 }

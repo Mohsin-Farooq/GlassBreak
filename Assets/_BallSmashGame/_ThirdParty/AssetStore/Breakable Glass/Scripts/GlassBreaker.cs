@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using MoreMountains.NiceVibrations;
 
 public class GlassBreaker : MonoBehaviour {
 	Vector3 vel;
@@ -12,7 +13,9 @@ public class GlassBreaker : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter (Collision col) {
-		if(col.gameObject.GetComponent<BreakGlass>()!=null){
+		MMVibrationManager.Haptic(HapticTypes.LightImpact);
+
+		if (col.gameObject.GetComponent<BreakGlass>()!=null){
 			g = col.gameObject.GetComponent<BreakGlass>();
 			GetComponent<Rigidbody>().velocity = vel * g.SlowdownCoefficient;
 			

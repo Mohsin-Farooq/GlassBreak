@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.177829, g: 0.22264731, b: 0.30479556, a: 1}
+  m_IndirectSpecularColor: {r: 0.17782903, g: 0.22264737, b: 0.30479532, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3986e73a11d772545a940ad521914efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RestartImage: {fileID: 1685571564}
+  RestartButton: {fileID: 1300790133}
 --- !u!1 &57216803
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &351625022
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2065,7 +2065,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1541800334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3986e73a11d772545a940ad521914efd, type: 3}
+  m_Script: {fileID: 11500000, guid: 68583b3b1e546cf4c96dd6c4bc617477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RestartImage: {fileID: 1685571564}
