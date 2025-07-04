@@ -1528,7 +1528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SoundSource: {fileID: 773092323}
   audioClips:
-  - {fileID: 8300000, guid: 2341d4aff071b7c419d91ba05cde6513, type: 3}
+  - {fileID: 8300000, guid: 5f2923856acfe0b469ec5074f14c06fb, type: 3}
 --- !u!4 &773092325
 Transform:
   m_ObjectHideFlags: 0
