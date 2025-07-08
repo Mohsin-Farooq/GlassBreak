@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3659888704824829842}
   - component: {fileID: 6216955365287959691}
   - component: {fileID: 1930853073803443687}
-  - component: {fileID: -8929705480096018628}
   - component: {fileID: 4580386130010097892}
+  - component: {fileID: -1410006495090100029}
   m_Layer: 8
   m_Name: Smash_Ball
   m_TagString: Ball
@@ -135,23 +135,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.123
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-8929705480096018628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3380230540177475378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a38078d195789a544bd4190659eaec33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _BallRealeasedThereshold: 0
-  _ball: {fileID: 6216955365287959691}
-  _moveSpeed: 30
-  maxYForce: 10
-  verticalSensitivity: 0.005
 --- !u!114 &4580386130010097892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,3 +147,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376bb4bac33c6ae49837b912ac69d6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1410006495090100029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3380230540177475378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5a23bf488428946ab902628ec287d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BallRealeasedThereshold: 0
+  _ball: {fileID: 6216955365287959691}
+  _moveSpeed: 30
+  maxYForce: 10
+  verticalSensitivity: 0.005
