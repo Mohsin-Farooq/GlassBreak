@@ -1,18 +1,21 @@
 using System.Collections;
 using UnityEngine;
 
-public class UI_Manager : MonoBehaviour
+namespace GlassBreakGame
 {
-    public static UI_Manager instance;
-    public GameObject RestartButton;
-    private void Awake()
+    public class UI_Manager : MonoBehaviour
     {
-        if (instance != null && instance != this)
+        public static UI_Manager instance;
+        public GameObject RestartButton;
+        private void Awake()
         {
-            Destroy(gameObject); 
-            return;
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            instance = this;
         }
-        instance = this;
-    }
 
+    }
 }

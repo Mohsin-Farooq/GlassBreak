@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/BreakGlassGame/BreakGlassScenes/BallSmashGame.unity
+    path: Assets/BreakGlassGame/BreakGlassScenes/BreakGlassGame.unity
     guid: b9bac99fdf4d1f042ad577b83f4ae6e2
   m_configObjects: {}

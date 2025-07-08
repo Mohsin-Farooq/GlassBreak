@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using GlassBreakGame;
 
 public class BreakGlass : MonoBehaviour {
 	public List<GameObject> BrokenGlassGO; // The broken glass GameObject

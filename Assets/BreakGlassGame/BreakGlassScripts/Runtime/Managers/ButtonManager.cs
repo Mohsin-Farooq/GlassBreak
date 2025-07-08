@@ -1,17 +1,20 @@
-using GlassBreakGame;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class ButtonManager : MonoBehaviour
+
+namespace GlassBreakGame
 {
-    public void Restart()
+    public class ButtonManager : MonoBehaviour
     {
-        PresistenceCanvas.instance.GetActiveRestartImage();
-        Invoke(nameof(LoadScene), 0.6f);
-    }
-    private void LoadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PresistenceCanvas.instance.DestroyCanvas();
-        
+        public void Restart()
+        {
+            PresistenceCanvas.instance.GetActiveRestartImage();
+            Invoke(nameof(LoadScene), 0.6f);
+        }
+        private void LoadScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PresistenceCanvas.instance.DestroyCanvas();
+
+        }
     }
 }

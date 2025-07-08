@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 namespace GlassBreakGame
 {
     public class PresistenceCanvas : MonoBehaviour

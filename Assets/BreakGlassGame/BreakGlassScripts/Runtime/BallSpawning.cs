@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GlassBreak
+namespace GlassBreakGame
 {
     public class BallSpawning : MonoBehaviour
     {
@@ -21,8 +21,7 @@ namespace GlassBreak
         {
             GameObject ball = PoolManager.instance.GetBall(transform.position, 1);
             ball.transform.localScale = Vector3.one * 2f;
-            //  BallVisualEffects visual = ball.GetComponent<BallVisualEffects>();
-            //  StartCoroutine(visual.ScaleUp(0.2f, Vector3.one * 1.5f));
+           
         }
     }
 }
