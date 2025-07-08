@@ -292,6 +292,7 @@ Transform:
   - {fileID: 773092325}
   - {fileID: 1562196399}
   - {fileID: 447524813}
+  - {fileID: 985441650}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &106038773
@@ -369,8 +370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 129449167}
-  - component: {fileID: 129449166}
-  - component: {fileID: 129449168}
+  - component: {fileID: 129449169}
   m_Layer: 0
   m_Name: ButtonManager
   m_TagString: Untagged
@@ -378,18 +378,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &129449166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129449165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ae0ef01a7ed9d4ca318c491163a412, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &129449167
 Transform:
   m_ObjectHideFlags: 0
@@ -405,7 +393,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 77944087}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &129449168
+--- !u!114 &129449169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,7 +402,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 129449165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14909c887ddb6b346825885da12b2561, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dedebe0701c5b0459c9dd033098537a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &220674345
@@ -1069,7 +1057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 1562196400}
-  buttonMnager: {fileID: 129449166}
+  buttonMnager: {fileID: 129449169}
 --- !u!1001 &469903783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1802,6 +1790,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 77944087}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &985441649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 985441650}
+  - component: {fileID: 985441651}
+  m_Layer: 0
+  m_Name: FpsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &985441650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985441649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 77944087}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985441651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985441649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db04da03745703e46bc51c12b4af7812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &992128228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,8 +2209,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 129449166}
-        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 129449169}
+        m_TargetAssemblyTypeName: GlassBreakGame.ButtonManager, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
