@@ -1164,54 +1164,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8332932303170595066, guid: 00a7f3f79269bb44d958b66fc4199380, type: 3}
   m_PrefabInstance: {fileID: 469903783}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &541428784
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 541428786}
-  - component: {fileID: 541428785}
-  m_Layer: 0
-  m_Name: SlowMo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &541428785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541428784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f1aa5807d7464f4f8717b641908f35c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetKey: 114
-  combination: 304
-  timeScaleMultiplier: 1
-  timeScaleCurrent: 0.01
---- !u!4 &541428786
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541428784}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10769284, y: -0.63705534, z: 7.036714}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &639113657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,4 +3765,3 @@ SceneRoots:
   - {fileID: 340653234}
   - {fileID: 1541800338}
   - {fileID: 1819325646}
-  - {fileID: 541428786}
