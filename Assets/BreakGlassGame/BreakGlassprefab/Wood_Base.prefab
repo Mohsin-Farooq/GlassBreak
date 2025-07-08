@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7081338532862346518}
   - component: {fileID: 7576516281370911467}
   - component: {fileID: 8939742425980653734}
-  - component: {fileID: 728187638437867755}
+  - component: {fileID: 2901964862479408812}
   m_Layer: 7
   m_Name: Wood_Base
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &728187638437867755
-MeshCollider:
+--- !u!65 &2901964862479408812
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +102,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2433934500621196145, guid: 12e3dc4096218fa43a94dd28f9ab45c2, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.9213423, y: 0.050828114, z: 0.27942806}
+  m_Center: {x: 0, y: 0.0254, z: 0}
