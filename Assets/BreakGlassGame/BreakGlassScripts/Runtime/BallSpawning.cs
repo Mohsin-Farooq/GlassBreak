@@ -1,7 +1,10 @@
 using UnityEngine;
 
+
+
 namespace GlassBreakGame
-{
+{    
+    [DefaultExecutionOrder(10)]
     public class BallSpawning : MonoBehaviour
     {
         public static BallSpawning instance;
